@@ -1,0 +1,36 @@
+https://www.youtube.com/watch?v=e0He6sCiQT8
+https://www.youtube.com/watch?v=5_9rvyT9cg4&t=159s
+https://www.youtube.com/watch?v=vzPsUWLprAw
+
+https://github.com/vitorLostadaC/React-JS--Crud-Mysql/tree/main/client/src
+
+Installation
+Client
+$ cd client
+$ npm install or $ yarn install
+$ npm start or $ yarn start
+
+Server
+Change your mySQL database data server/index.js
+$ cd server
+$ npm install or $ yarn
+$ npm rum devStart
+
+Functionalities
+Create games in the database
+Read games in the database
+Update games in the database
+Delete games in the database
+Click card to edit and delete
+
+Used Libraries
+Front-end
+@material-ui
+Axios
+Back-end
+express
+mysql2
+nodemon
+cors
+
+Observação lembrar de trocar o import MYSQL po MYYSQL2
