@@ -50,6 +50,7 @@ const createDatabaseAndTables = () => {
       mae VARCHAR(255),\
       responsavel VARCHAR(255),\
       bolsafamilia VARCHAR(255),\
+      valorbolsafamilia VARCHAR(255),\
       beneficiodeprestacaocontinuada VARCHAR(255),\
       nis VARCHAR(255),\
       cid10 VARCHAR(255),\
@@ -92,7 +93,9 @@ app.post("/register/pessoa-fisica", async (req, res) => {
       pai, 
       mae, 
       responsavel, 
-      bolsafamilia, beneficiodeprestacaocontinuada, 
+      bolsafamilia,
+      valorbolsafamilia,
+      beneficiodeprestacaocontinuada, 
       nis, 
       cid10, 
       datainclusao, 
@@ -105,13 +108,13 @@ app.post("/register/pessoa-fisica", async (req, res) => {
     const sql = `
       INSERT INTO pessoafisica (
         nome, apelido, sexo, datanascimento, rg, ssp, cpf, cartaosus, endereco,
-        numero, bairro, complemento, municipio, pontodereferencia, contato1, contato2, pai, mae, responsavel, bolsafamilia, beneficiodeprestacaocontinuada, nis, cid10, datainclusao, datadesligamento, usodeimagem 
-      ) VALUES (?, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?, ?)
+        numero, bairro, complemento, municipio, pontodereferencia, contato1, contato2, pai, mae, responsavel, bolsafamilia, valorbolsafamilia, beneficiodeprestacaocontinuada, nis, cid10, datainclusao, datadesligamento, usodeimagem 
+      ) VALUES (?, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?, ?)
     `;
 
     db.query(sql, [
       nome, apelido, sexo, datanascimento, rg, ssp, cpf, cartaosus, endereco,
-      numero, bairro, complemento, municipio, pontodereferencia, contato1, contato2, pai, mae, responsavel, bolsafamilia, beneficiodeprestacaocontinuada, nis, cid10, datainclusao, datadesligamento, usodeimagem
+      numero, bairro, complemento, municipio, pontodereferencia, contato1, contato2, pai, mae, responsavel, bolsafamilia, valorbolsafamilia, beneficiodeprestacaocontinuada, nis, cid10, datainclusao, datadesligamento, usodeimagem
     ], (err, result) => {
       if (err) {
         console.error(err);
@@ -173,9 +176,10 @@ app.get("/getCards", (req, res) => {
   });
 });
 
-app.put("/pessoa-fisica/edit/", async (req, res) => {
+app.put("/pessoa-fisica/edit/:id", async (req, res) => {
   try {
     const {
+      id_pessoa,
       nome,
       apelido,
       sexo,
@@ -196,28 +200,24 @@ app.put("/pessoa-fisica/edit/", async (req, res) => {
       mae,
       responsavel,
       bolsafamilia,
+      valorbolsafamilia,
       beneficiodeprestacaocontinuada,
       nis,
       cid10,
       datainclusao,
       datadesligamento,
       usodeimagem,
-      id_pessoa
     } = req.body;
-
-    // Validate incoming data (optional)
-    // Implement data validation logic to ensure data integrity
-
+    
     const sql = `
       UPDATE pessoafisica
       SET nome = ?, apelido = ?, sexo = ?, datanascimento = ?, rg = ?, ssp = ?, cpf = ?, cartaosus = ?, 
           endereco = ?, numero = ?, bairro = ?, complemento = ?, municipio = ?, pontodereferencia = ?, 
-          contato1 = ?, contato2 = ?, pai = ?, mae = ?, responsavel = ?, bolsafamilia = ?, 
-          beneficiodeprestacaocontinuada = ?, nis = ?, cid10 = ?, datainclusao = ?, datadesligamento = ?, 
-          usodeimagem = ?
+          contato1 = ?, contato2 = ?, pai = ?, mae = ?, responsavel = ?, bolsafamilia = ?, valorbolsafamilia = ?, 
+          beneficiodeprestacaocontinuada = ?, nis = ?, cid10 = ?, datainclusao = ?, datadesligamento = ?, usodeimagem = ?
       WHERE id_pessoa = ?
     `;
-
+    
     const values = [
       nome,
       apelido,
@@ -239,23 +239,24 @@ app.put("/pessoa-fisica/edit/", async (req, res) => {
       mae,
       responsavel,
       bolsafamilia,
+      valorbolsafamilia,
       beneficiodeprestacaocontinuada,
       nis,
       cid10,
       datainclusao,
       datadesligamento,
       usodeimagem,
-      id_pessoa
+      id_pessoa,
     ];
 
-    const [result, err] = await db.query(sql, values);
-
-    if (err) {
-      console.error(err);
-      res.status(500).send("Erro: Ocorreu um erro no banco de dados ao atualizar os dados da pessoa.");
-    } else {
-      res.send(result);
-    }
+    db.query(sql, values, (err, result) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send("Erro: Ocorreu um erro no banco de dados ao atualizar os dados da pessoa.");
+      } else {
+        res.send(result);
+      }
+    });
   } catch (error) {
     console.error(error);
     res.status(500).send("Erro: Ocorreu um erro inesperado ao tentar atualizar os dados da pessoa.");
