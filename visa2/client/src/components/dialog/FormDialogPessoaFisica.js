@@ -89,7 +89,13 @@ export default function FormDialogPessoaFisica(props) {
       return;
     }
 
-    Axios.put("http://localhost:3001/pessoa-fisica/edit", editValues).then(() => {
+    // Formatar a data de nascimento para 'YYYY-MM-DD'
+    const formattedValues = {
+      ...editValues,
+      datanascimento: editValues.datanascimento.split('T')[0], // Pegar apenas a parte da data 'YYYY-MM-DD'
+    };
+
+    Axios.put("http://localhost:3001/pessoa-fisica/edit", formattedValues).then(() => {
       const updatedListPessoaFisica = props.listPessoaFisica.map((value) => {
         if (value.id === editValues.id) {
           return { ...editValues };
@@ -310,7 +316,7 @@ export default function FormDialogPessoaFisica(props) {
         <TextField
           margin="dense"
           id="valorbolsafamilia"
-          label="Valor Bolsa Família"
+          label="Valor da Bolsa Família"
           value={editValues.valorbolsafamilia}
           onChange={handleChangeValues}
           type="text"
@@ -370,16 +376,15 @@ export default function FormDialogPessoaFisica(props) {
           type="text"
           fullWidth
         />
-        {/* Add other TextField components as needed */}
       </DialogContent>
       <DialogActions>
         <Button onClick={handleClose} color="primary">
           Cancelar
         </Button>
-        <Button color="primary" onClick={handleDeletePessoafisica}>
+        <Button onClick={handleDeletePessoafisica} color="secondary">
           Excluir
         </Button>
-        <Button color="primary" onClick={handleEditPessoafisica}>
+        <Button onClick={handleEditPessoafisica} color="primary">
           Salvar
         </Button>
       </DialogActions>

@@ -214,9 +214,9 @@ app.put("/pessoa-fisica/edit", async (req, res) => {
     }
 
     // Verificar e ajustar valores de data
-    const datanascimentoValue = datanascimento ? datanascimento : null;
-    const datainclusaoValue = datainclusao ? datainclusao : null;
-    const datadesligamentoValue = datadesligamento ? datadesligamento : null;
+    const datanascimentoValue = datanascimento && datanascimento.trim() !== '' ? datanascimento : null;
+    const datainclusaoValue = datainclusao && datainclusao.trim() !== '' ? datainclusao : null;
+    const datadesligamentoValue = datadesligamento && datadesligamento.trim() !== '' ? datadesligamento : null;
 
     const sql = `
       UPDATE pessoafisica
@@ -272,6 +272,7 @@ app.put("/pessoa-fisica/edit", async (req, res) => {
     res.status(500).send("Erro: Ocorreu um erro inesperado ao tentar atualizar os dados da pessoa.");
   }
 });
+
 
 
 
