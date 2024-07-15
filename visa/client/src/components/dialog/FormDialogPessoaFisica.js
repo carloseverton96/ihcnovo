@@ -1,5 +1,3 @@
-//este é a parte que surge uma caixa de formulário para atualizar ou deletar algum cadastro.
-
 import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
@@ -9,12 +7,9 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Axios from "axios";
 
-
-
-
 export default function FormDialogPessoaFisica(props) {
   const [editValues, setEditValues] = useState({
-    id_pessoa: props.id_pessoa,
+    id: props.id,
     nome: props.nome,
     apelido: props.apelido,
     sexo: props.sexo,
@@ -43,10 +38,11 @@ export default function FormDialogPessoaFisica(props) {
     usoimagem: props.usoimagem,
   });
 
-  const handleChangeValues = (values) => {
+  const handleChangeValues = (event) => {
+    const { id, value } = event.target;
     setEditValues((prevValues) => ({
       ...prevValues,
-      [values.target.id]: values.target.value,
+      [id]: value,
     }));
   };
 
@@ -55,90 +51,32 @@ export default function FormDialogPessoaFisica(props) {
   };
 
   const handleEditPessoaFisica = () => {
-    Axios.put("http://localhost:3001/edit", {
-      id_pessoa: editValues.id_pessoa,
-    nome: editValues.nome,
-    apelido: editValues.apelido,
-    sexo: editValues.sexo,
-    datanascimento: editValues.datanascimento,
-    rg: editValues.rg,
-    ssp: editValues.ssp,
-    cpf: editValues.cpf,
-    cartaosus: editValues.cartaosus,
-    endereco: editValues.endereco,
-    numero: editValues.numero,
-    bairro: editValues.bairro,
-    complemento: editValues.complemento,
-    municipio: editValues.municipio,
-    pontodereferencia: editValues.pontodereferencia,
-    contato1: editValues.contato1,
-    contato2: editValues.contato2,
-    pai: editValues.pai,
-    mae: editValues.mae,
-    responsavel: editValues.responsavel,
-    bolsafamilia: editValues.bolsafamilia,
-    beneficiodeprestacaocontinuada: editValues.beneficiodeprestacaocontinuada,
-    nis: editValues.nis,
-    cid10: editValues.cid10,
-    datainclusao: editValues.datainclusao,
-    datadesligamento: editValues.datadesligamento,
-    usoimagem: editValues.usoimagem,
-
-    }).then(() => {
-      // Crie um novo array para armazenar os dados atualizados
-      const updatedListPessoaFisica = props.listPessoaFisica.map((value) => {
-        // Verifique se o ID corresponde ao valor editado
-        if (value.id_pessoa === editValues.id_pessoa) {
-          // Retorne um novo objeto com os dados atualizados
-          return {
-            id_pessoa: editValues.id_pessoa,
-            nome: editValues.nome,
-            apelido: editValues.apelido,
-            sexo: editValues.sexo,
-            datanascimento: editValues.datanascimento,
-            rg: editValues.rg,
-            ssp: editValues.ssp,
-            cpf: editValues.cpf,
-            cartaosus: editValues.cartaosus,
-            endereco: editValues.endereco,
-            numero: editValues.numero,
-            bairro: editValues.bairro,
-            complemento: editValues.complemento,
-            municipio: editValues.municipio,
-            pontodereferencia: editValues.pontodereferencia,
-            contato1: editValues.contato1,
-            contato2: editValues.contato2,
-            pai: editValues.pai,
-            mae: editValues.mae,
-            responsavel: editValues.responsavel,
-            bolsafamilia: editValues.bolsafamilia,
-            beneficiodeprestacaocontinuada: editValues.beneficiodeprestacaocontinuada,
-            nis: editValues.nis,
-            cid10: editValues.cid10,
-            datainclusao: editValues.datainclusao,
-            datadesligamento: editValues.datadesligamento,
-            usoimagem: editValues.usoimagem,
-          };
-        } else {
-          // Retorne o valor original para outros itens
+    Axios.put("http://localhost:3001/pessoa-fisica/edit", editValues)
+      .then(() => {
+        const updatedListPessoaFisica = props.listPessoaFisica.map((value) => {
+          if (value.id_pessoa === editValues.id_pessoa) {
+            return { ...editValues };
+          }
           return value;
-        }
+        });
+        props.setListPessoaFisica(updatedListPessoaFisica);
+      })
+      .catch((error) => {
+        console.error("There was an error updating the person!", error);
       });
-
-      // Atualize o estado com o novo array usando a prop recebida
-      props.setListPessoaFisica(updatedListPessoaFisica);
-    });
     handleClose();
   };
-  
+
   const handleDeletePessoaFisica = () => {
-    Axios.delete(`http://localhost:3001/delete/${editValues.id_pessoa}`).then(() => {
-      props.setListPessoaFisica(
-        props.listPessoaFisica.filter((value) => {
-          return value.id_pessoa !== editValues.id_pessoa;
-        })
-      );
-    });
+    Axios.delete(`http://localhost:3001/pessoa-fisica/delete/${editValues.id}`)
+      .then(() => {
+        props.setListPessoaFisica(
+          props.listPessoaFisica.filter((value) => value.id_pessoa !== editValues.id_pessoa)
+        );
+      })
+      .catch((error) => {
+        console.error("There was an error deleting the person!", error);
+      });
     handleClose();
   };
 
@@ -150,114 +88,85 @@ export default function FormDialogPessoaFisica(props) {
           <TextField
             disabled
             margin="dense"
-            id="id_pessoa"
-            label="id_pessoa"
-            defaultValue={props.id_pessoa}
+            id="id"
+            label="ID"
+            defaultValue={props.id}
             type="text"
             fullWidth
           />
           <TextField
             autoFocus
             margin="dense"
-            id="cnpj"
-            label="cnpj"
-            defaultValue={props.cnpj}
+            id="nome"
+            label="Nome"
+            defaultValue={props.nome}
             type="text"
             onChange={handleChangeValues}
             fullWidth
           />
-         
-
           <TextField
             margin="dense"
-            id="esfempresaunidade"
-            label="ESF/EMPRESA/UNIDADE"
-            defaultValue={props.esfempresaunidade}
+            id="apelido"
+            label="Apelido"
+            defaultValue={props.apelido}
             type="text"
             fullWidth
             onChange={handleChangeValues}
           />
-
           <TextField
             margin="dense"
-            id="razaosocial"
-            label="Razão Social"
-            defaultValue={props.razaosocial}
+            id="sexo"
+            label="Sexo"
+            defaultValue={props.sexo}
             type="text"
             fullWidth
             onChange={handleChangeValues}
           />
-
           <TextField
             margin="dense"
-            id="nomefantasia"
-            label="Nome Fantasia"
-            defaultValue={props.nomefantasia}
+            id="datanascimento"
+            label="Data de Nascimento"
+            defaultValue={props.datanascimento}
+            type="date"
+            fullWidth
+            onChange={handleChangeValues}
+          />
+          <TextField
+            margin="dense"
+            id="rg"
+            label="RG"
+            defaultValue={props.rg}
             type="text"
             fullWidth
             onChange={handleChangeValues}
           />
-
           <TextField
             margin="dense"
-            id="cnes"
-            label="CNES"
-            defaultValue={props.cnes}
+            id="ssp"
+            label="SSP"
+            defaultValue={props.ssp}
             type="text"
             fullWidth
             onChange={handleChangeValues}
           />
-
           <TextField
             margin="dense"
-            id="cpfresponsavellegal"
-            label="CPF Responsável Legal"
-            defaultValue={props.cpfresponsavellegal}
+            id="cpf"
+            label="CPF"
+            defaultValue={props.cpf}
             type="text"
             fullWidth
             onChange={handleChangeValues}
           />
-
           <TextField
             margin="dense"
-            id="nomeresponsavellegal"
-            label="Nome Responsável Legal"
-            defaultValue={props.nomeresponsavellegal}
+            id="cartaosus"
+            label="Cartão SUS"
+            defaultValue={props.cartaosus}
             type="text"
             fullWidth
             onChange={handleChangeValues}
           />
-
-          <TextField
-            margin="dense"
-            id="cpfresponsaveltecnico"
-            label="CPF Responsável Técnico"
-            defaultValue={props.cpfresponsaveltecnico}
-            type="text"
-            fullWidth
-            onChange={handleChangeValues}
-          />
-
-          <TextField
-            margin="dense"
-            id="nomeresponsaveltecnico"
-            label="Nome Responsável Técnico"
-            defaultValue={props.nomeresponsaveltecnico}
-            type="text"
-            fullWidth
-            onChange={handleChangeValues}
-          />
-
-          <TextField
-            margin="dense"
-            id="numeroresponsaveltecnico"
-            label="Nº Conselho de Classe"  
-            defaultValue={props.numeroresponsaveltecnico}
-            type="number"
-            fullWidth
-            onChange={handleChangeValues}
-          />
-
           <TextField
             margin="dense"
             id="endereco"
@@ -267,17 +176,15 @@ export default function FormDialogPessoaFisica(props) {
             fullWidth
             onChange={handleChangeValues}
           />
-
           <TextField
             margin="dense"
             id="numero"
-            label="Nº"
+            label="Número"
             defaultValue={props.numero}
             type="number"
             fullWidth
             onChange={handleChangeValues}
           />
-
           <TextField
             margin="dense"
             id="bairro"
@@ -287,7 +194,6 @@ export default function FormDialogPessoaFisica(props) {
             fullWidth
             onChange={handleChangeValues}
           />
-          
           <TextField
             margin="dense"
             id="complemento"
@@ -297,7 +203,6 @@ export default function FormDialogPessoaFisica(props) {
             fullWidth
             onChange={handleChangeValues}
           />
-
           <TextField
             margin="dense"
             id="municipio"
@@ -307,7 +212,15 @@ export default function FormDialogPessoaFisica(props) {
             fullWidth
             onChange={handleChangeValues}
           />
-
+          <TextField
+            margin="dense"
+            id="pontodereferencia"
+            label="Ponto de Referência"
+            defaultValue={props.pontodereferencia}
+            type="text"
+            fullWidth
+            onChange={handleChangeValues}
+          />
           <TextField
             margin="dense"
             id="contato1"
@@ -317,7 +230,6 @@ export default function FormDialogPessoaFisica(props) {
             fullWidth
             onChange={handleChangeValues}
           />
-
           <TextField
             margin="dense"
             id="contato2"
@@ -327,25 +239,114 @@ export default function FormDialogPessoaFisica(props) {
             fullWidth
             onChange={handleChangeValues}
           />
-
           <TextField
             margin="dense"
-            id="anocadastro"
-            label="Ano de Cadastro"  defaultValue={props.anocadastro}
+            id="pai"
+            label="Pai"
+            defaultValue={props.pai}
             type="text"
             fullWidth
             onChange={handleChangeValues}
           />
-
+          <TextField
+            margin="dense"
+            id="mae"
+            label="Mãe"
+            defaultValue={props.mae}
+            type="text"
+            fullWidth
+            onChange={handleChangeValues}
+          />
+          <TextField
+            margin="dense"
+            id="responsavel"
+            label="Responsável"
+            defaultValue={props.responsavel}
+            type="text"
+            fullWidth
+            onChange={handleChangeValues}
+          />
+          <TextField
+            margin="dense"
+            id="bolsafamilia"
+            label="Bolsa Família"
+            defaultValue={props.bolsafamilia}
+            type="text"
+            fullWidth
+            onChange={handleChangeValues}
+          />
+          <TextField
+            margin="dense"
+            id="valorbolsafamilia"
+            label="Valor Bolsa Família"
+            defaultValue={props.valorbolsafamilia}
+            type="text"
+            fullWidth
+            onChange={handleChangeValues}
+          />
+          <TextField
+            margin="dense"
+            id="beneficiodeprestacaocontinuada"
+            label="Benefício de Prestação Continuada"
+            defaultValue={props.beneficiodeprestacaocontinuada}
+            type="text"
+            fullWidth
+            onChange={handleChangeValues}
+          />
+          <TextField
+            margin="dense"
+            id="nis"
+            label="NIS"
+            defaultValue={props.nis}
+            type="text"
+            fullWidth
+            onChange={handleChangeValues}
+          />
+          <TextField
+            margin="dense"
+            id="cid10"
+            label="CID-10"
+            defaultValue={props.cid10}
+            type="text"
+            fullWidth
+            onChange={handleChangeValues}
+          />
+          <TextField
+            margin="dense"
+            id="datainclusao"
+            label="Data de Inclusão"
+            defaultValue={props.datainclusao}
+            type="date"
+            fullWidth
+            onChange={handleChangeValues}
+          />
+          <TextField
+            margin="dense"
+            id="datadesligamento"
+            label="Data de Desligamento"
+            defaultValue={props.datadesligamento}
+            type="date"
+            fullWidth
+            onChange={handleChangeValues}
+          />
+          <TextField
+            margin="dense"
+            id="usoimagem"
+            label="Uso de Imagem"
+            defaultValue={props.usoimagem}
+            type="text"
+            fullWidth
+            onChange={handleChangeValues}
+          />
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">
             Cancelar
           </Button>
-          <Button color="primary" onClick={handleDeletePessoaFisica}>
+          <Button onClick={handleDeletePessoaFisica} color="primary">
             Excluir
           </Button>
-          <Button color="primary" onClick={handleEditPessoaFisica}>
+          <Button onClick={handleEditPessoaFisica} color="primary">
             Salvar
           </Button>
         </DialogActions>

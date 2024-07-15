@@ -3,6 +3,7 @@ const app = express();
 const mysql = require("mysql2");
 const cors = require("cors");
 
+
 const initialDb = mysql.createPool({
   host: "localhost",
   user: "root",
@@ -172,58 +173,114 @@ app.get("/getCards", (req, res) => {
   });
 });
 
-app.put("/edit", (req, res) => {
-   const { id_pessoa } = req.body;
-   const { nome } = req.body;
-    const { apelido } = req.body;
-    const { sexo } = req.body;
-    const { datanascimento } = req.body;
-    const { rg } = req.body;
-    const { ssp } = req.body;
-    const { cpf } = req.body;
-    const { cartaosus } = req.body;
-    const { endereco } = req.body;
-    const { numero } = req.body;
-    const { bairro } = req.body;
-    const { complemento } = req.body;
-    const { municipio } = req.body;
-    const { pontodereferencia } = req.body;
-    const { contato1 } = req.body;
-    const { contato2 } = req.body;
-    const { pai } = req.body;
-    const { mae } = req.body;
-    const { responsavel } = req.body;
-    const { bolsafamilia } = req.body;
-    const { beneficiodeprestacaocontinuada } = req.body;
-    const { nis } = req.body;
-    const { cid10 } = req.body;
-    const { datainclusao } = req.body;
-    const { datadesligamento } = req.body;
-    const { usodeimagem } = req.body;
-  
-   let mysql = "UPDATE pessoafisica SET nome = ?, apelido = ?, sexo = ?, datanascimento = ?, rg = ?, ssp = ?, cpf = ?, cartaosus = ?, endereco = ?, numero = ?, bairro = ?, complemento = ?, municipio = ?, pontodereferencia = ?, contato1 = ?, contato2 = ?, pai = ?, mae = ?, responsavel = ?, bolsafamilia = ?, beneficiodeprestacaocontinuada = ?, nis = ?, cid10 = ?, datainclusao = ?, datadesligamento = ?, usodeimagem = ? WHERE id_pessoa = ?";
-   db.query(mysql, [nome, apelido, sexo, datanascimento, rg, ssp, cpf, cartaosus, endereco, numero, bairro, complemento, municipio, pontodereferencia, contato1, contato2, pai, mae, responsavel, bolsafamilia, beneficiodeprestacaocontinuada, nis, cid10, datainclusao, datadesligamento, usodeimagem, id_pessoa], (err, result) => {
-   if (err) {
-     console.error(err); // Registre o erro para fins de depuração
-     res.status(500).send("Erro: Ocorreu um erro no banco de dados");
-    } else {
-     res.send(result);
-    }
-   });
-  });
- 
+app.put("/pessoa-fisica/edit/", async (req, res) => {
+  try {
+    const {
+      nome,
+      apelido,
+      sexo,
+      datanascimento,
+      rg,
+      ssp,
+      cpf,
+      cartaosus,
+      endereco,
+      numero,
+      bairro,
+      complemento,
+      municipio,
+      pontodereferencia,
+      contato1,
+      contato2,
+      pai,
+      mae,
+      responsavel,
+      bolsafamilia,
+      beneficiodeprestacaocontinuada,
+      nis,
+      cid10,
+      datainclusao,
+      datadesligamento,
+      usodeimagem,
+      id_pessoa
+    } = req.body;
 
-app.delete("/delete/:id", (req, res) => {
-  const { id_pessoa } = req.params;
-  let mysql = "DELETE FROM pessoajuridica WHERE id_pessoa = ?";
-  db.query(mysql, [id_pessoa], (err, result) => {
+    // Validate incoming data (optional)
+    // Implement data validation logic to ensure data integrity
+
+    const sql = `
+      UPDATE pessoafisica
+      SET nome = ?, apelido = ?, sexo = ?, datanascimento = ?, rg = ?, ssp = ?, cpf = ?, cartaosus = ?, 
+          endereco = ?, numero = ?, bairro = ?, complemento = ?, municipio = ?, pontodereferencia = ?, 
+          contato1 = ?, contato2 = ?, pai = ?, mae = ?, responsavel = ?, bolsafamilia = ?, 
+          beneficiodeprestacaocontinuada = ?, nis = ?, cid10 = ?, datainclusao = ?, datadesligamento = ?, 
+          usodeimagem = ?
+      WHERE id_pessoa = ?
+    `;
+
+    const values = [
+      nome,
+      apelido,
+      sexo,
+      datanascimento,
+      rg,
+      ssp,
+      cpf,
+      cartaosus,
+      endereco,
+      numero,
+      bairro,
+      complemento,
+      municipio,
+      pontodereferencia,
+      contato1,
+      contato2,
+      pai,
+      mae,
+      responsavel,
+      bolsafamilia,
+      beneficiodeprestacaocontinuada,
+      nis,
+      cid10,
+      datainclusao,
+      datadesligamento,
+      usodeimagem,
+      id_pessoa
+    ];
+
+    const [result, err] = await db.query(sql, values);
+
     if (err) {
-      console.log(err);
+      console.error(err);
+      res.status(500).send("Erro: Ocorreu um erro no banco de dados ao atualizar os dados da pessoa.");
+    } else {
+      res.send(result);
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Erro: Ocorreu um erro inesperado ao tentar atualizar os dados da pessoa.");
+  }
+});
+
+
+
+app.delete("/pessoa-fisica/delete/:id_pessoa", (req, res) => {
+  const { id_pessoa } = req.params;
+  const sql = "DELETE FROM pessoafisica WHERE id_pessoa = ?";
+
+  db.query(sql, [id_pessoa], (err, result) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send("Erro: Ocorreu um erro no banco de dados ao excluir a pessoa.");
     } else {
       res.send(result);
     }
   });
 });
+
+
+
+
 
 
 //REQUISIÇÕES PARA PESSOA FÍSICA

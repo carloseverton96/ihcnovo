@@ -245,7 +245,7 @@ export default function FormPessoaFisica() {
           onChange={handleAddValues}
         />
 
-<input
+        <input
           type="text"
           name="pai"
           placeholder="Nome do pai"
