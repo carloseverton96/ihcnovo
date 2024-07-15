@@ -20,7 +20,7 @@ export default function FormPessoaFisica() {
       if (!validateForm()) return; // Validar antes de enviar
   
       try {
-        const response = await Axios.post("http://localhost:3001/register/pessoa-fisica", {
+        const response = await Axios.post("http://localhost:3002/register/pessoa-fisica", {
           nome: values.nome,
           apelido: values.apelido,
           sexo: values.sexo,
@@ -69,7 +69,7 @@ export default function FormPessoaFisica() {
     // Função para buscar a lista de Pessoas Jurídicas
     const fetchListPessoaFisica = async () => {
       try {
-        const response = await Axios.get("http://localhost:3001/getCards");
+        const response = await Axios.get("http://localhost:3002/getCards");
         if (response.status === 200) {
           return response.data;
         } else {
@@ -129,7 +129,7 @@ export default function FormPessoaFisica() {
 
 
       <input
-        type="date"
+        type="text"
         name="datanascimento"
         placeholder="Data de Nascimento"
         className="register-input"
@@ -323,7 +323,7 @@ Possui Bolsa Família:
 
 Data de Inclusão:
         <input
-          type="date"
+          type="text"
           name="datainclusao"
           placeholder="Data de Inclusão"
           className="register-input"
@@ -333,7 +333,7 @@ Data de Inclusão:
 
 data de desligamento:
         <input
-          type="date"
+          type="text"
           name="datadesligamento"
           placeholder="Data de desligamento"
           className="register-input"

@@ -7,6 +7,11 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Axios from "axios";
 
+
+
+  
+
+
 export default function FormDialogPessoaFisica(props) {
   const [editValues, setEditValues] = useState({
     id: "",
@@ -88,30 +93,34 @@ export default function FormDialogPessoaFisica(props) {
       alert("Erro: id está faltando nos valores de edição!");
       return;
     }
-
-    // Formatar a data de nascimento para 'YYYY-MM-DD'
-    const formattedValues = {
-      ...editValues,
-      datanascimento: editValues.datanascimento.split('T')[0], // Pegar apenas a parte da data 'YYYY-MM-DD'
-    };
-
-    Axios.put("http://localhost:3001/pessoa-fisica/edit", formattedValues).then(() => {
-      const updatedListPessoaFisica = props.listPessoaFisica.map((value) => {
-        if (value.id === editValues.id) {
-          return { ...editValues };
-        } else {
-          return value;
+  
+    Axios.put("http://localhost:3002/pessoa-fisica/edit", editValues)
+      .then(() => {
+        if (!props.listPessoaFisica) {
+          console.error("listPessoaFisica is undefined");
+          return;
         }
+        const updatedListPessoaFisica = props.listPessoaFisica.map((value) => {
+          if (value.id === editValues.id) {
+            return { ...editValues };
+          } else {
+            return value;
+          }
+        });
+  
+        props.setListPessoaFisica(updatedListPessoaFisica);
+      })
+      .catch((error) => {
+        console.error("Erro ao atualizar pessoa física:", error);
       });
-
-      props.setListPessoaFisica(updatedListPessoaFisica);
-    });
-
+  
     handleClose();
   };
+  
+  
 
   const handleDeletePessoafisica = () => {
-    Axios.delete(`http://localhost:3001/pessoa-fisica/delete/${editValues.id}`).then(() => {
+    Axios.delete(`http://localhost:3002/pessoa-fisica/delete/${editValues.id}`).then(() => {
       props.setListPessoaFisica(
         props.listPessoaFisica.filter((value) => value.id !== editValues.id)
       );
@@ -166,7 +175,7 @@ export default function FormDialogPessoaFisica(props) {
           label="Data de Nascimento"
           value={editValues.datanascimento}
           onChange={handleChangeValues}
-          type="date"
+          type="text"
           fullWidth
         />
         <TextField
@@ -355,7 +364,7 @@ export default function FormDialogPessoaFisica(props) {
           label="Data de Inclusão"
           value={editValues.datainclusao}
           onChange={handleChangeValues}
-          type="date"
+          type="text"
           fullWidth
         />
         <TextField
@@ -364,7 +373,7 @@ export default function FormDialogPessoaFisica(props) {
           label="Data de Desligamento"
           value={editValues.datadesligamento}
           onChange={handleChangeValues}
-          type="date"
+          type="text"
           fullWidth
         />
         <TextField

@@ -33,7 +33,7 @@ const createDatabaseAndTables = () => {
       nome VARCHAR(250),\
       apelido VARCHAR(255),\
       sexo VARCHAR(255),\
-      datanascimento DATE,\
+      datanascimento VARCHAR(255),\
       rg VARCHAR(255),\
       ssp VARCHAR(255),\
       cpf VARCHAR(255),\
@@ -54,8 +54,8 @@ const createDatabaseAndTables = () => {
       beneficiodeprestacaocontinuada VARCHAR(255),\
       nis VARCHAR(255),\
       cid10 VARCHAR(255),\
-      datainclusao DATE,\
-      datadesligamento DATE,\
+      datainclusao VARCHAR(255),\
+      datadesligamento VARCHAR(255),\
       usodeimagem VARCHAR(255)\
     )", (err) => {
       if (err) {
@@ -176,7 +176,7 @@ app.get("/getCards", (req, res) => {
   });
 });
 
-app.put("/pessoa-fisica/edit", async (req, res) => {
+app.put("/pessoa-fisica/edit", (req, res) => {
   try {
     const {
       id,
@@ -213,11 +213,6 @@ app.put("/pessoa-fisica/edit", async (req, res) => {
       return res.status(400).send("Erro: ID é obrigatório para atualizar os dados.");
     }
 
-    // Verificar e ajustar valores de data
-    const datanascimentoValue = datanascimento && datanascimento.trim() !== '' ? datanascimento : null;
-    const datainclusaoValue = datainclusao && datainclusao.trim() !== '' ? datainclusao : null;
-    const datadesligamentoValue = datadesligamento && datadesligamento.trim() !== '' ? datadesligamento : null;
-
     const sql = `
       UPDATE pessoafisica
       SET nome = ?, apelido = ?, sexo = ?, datanascimento = ?, rg = ?, ssp = ?, cpf = ?, cartaosus = ?, endereco = ?, numero = ?, bairro = ?, complemento = ?, municipio = ?, pontodereferencia = ?, contato1 = ?, contato2 = ?, pai = ?, mae = ?, responsavel = ?, bolsafamilia = ?, valorbolsafamilia = ?, beneficiodeprestacaocontinuada = ?, nis = ?, cid10 = ?, datainclusao = ?, datadesligamento = ?, usodeimagem = ?
@@ -228,7 +223,7 @@ app.put("/pessoa-fisica/edit", async (req, res) => {
       nome,
       apelido,
       sexo,
-      datanascimentoValue,
+      datanascimento,
       rg,
       ssp,
       cpf,
@@ -249,8 +244,8 @@ app.put("/pessoa-fisica/edit", async (req, res) => {
       beneficiodeprestacaocontinuada,
       nis,
       cid10,
-      datainclusaoValue,
-      datadesligamentoValue,
+      datainclusao,
+      datadesligamento,
       usodeimagem,
       id,
     ];
@@ -272,6 +267,7 @@ app.put("/pessoa-fisica/edit", async (req, res) => {
     res.status(500).send("Erro: Ocorreu um erro inesperado ao tentar atualizar os dados da pessoa.");
   }
 });
+
 
 
 
@@ -301,6 +297,6 @@ app.delete("/pessoa-fisica/delete/:id", (req, res) => {
 
 
 
-app.listen(3001, () => {
-  console.log("rodando na porta 3001");
+app.listen(3002, () => {
+  console.log("rodando na porta 3002");
 });
