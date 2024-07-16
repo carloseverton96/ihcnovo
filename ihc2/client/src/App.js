@@ -17,7 +17,7 @@ const App = () => {
         <Route path='/' element={ <Login/> } />
         
         <Route path="/pessoa-fisica" element={ <FormPessoaFisica /> } />
-        <Route path="/pessoa-fisica" element={ <ServicoSocial /> } />
+        <Route path="/servico-social" element={ <ServicoSocial /> } />
         
         
         {/* Adicione outras rotas conforme necessário */}

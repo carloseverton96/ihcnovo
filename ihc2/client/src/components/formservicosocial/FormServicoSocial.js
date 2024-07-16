@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Axios from "axios";
 import Navigation from "../routes/Navigation";
+import CardFormServicoSocial from "../cards/CardFormServicoSocial";
 
 
 
@@ -100,14 +101,14 @@ export default function FormServicoSocial() {
       
       <div className="register-container">
         <h1 className="register-title">Servico Social</h1>
-        {/* <input
+        <input
             type="text"
             name="nome"
             placeholder="Nome"
             className="register-input"
             value={values.nome || ""}
             onChange={handleAddValues}
-          /> */}
+          />
 
 
      
@@ -116,7 +117,7 @@ export default function FormServicoSocial() {
         </button>
       </div>
 
-      {/* {typeof listServicoSocial !== "undefined" &&
+      {typeof listServicoSocial !== "undefined" &&
        listServicoSocial.sort((a, b) => b.id - a.id).map((value) => {
         return (
         <CardFormServicoSocial
@@ -150,13 +151,13 @@ export default function FormServicoSocial() {
           datainclusao={value.datainclusao}
           datadesligamento={value.datadesligamento}
           usoimagem={value.usoimagem}
-        />   */}
+        />   
 
 
 
         
-        {/* );
-    })} */}
+         );
+    })} 
     </div>
   );
 }
