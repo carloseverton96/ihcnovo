@@ -15,13 +15,17 @@ const Navigation = () => {
             <Link to="/" className="navbar-brand"></Link>
             <ul>
               <li className="list-item">
-                <Link to="/home" className="nav-link">Vigilância Sanitária</Link>
+                <Link to="/home" className="nav-link">I  H  C</Link>
               </li>
              
 
               <li className="list-item">  
                 <Link to="/pessoa-fisica" className="nav-link">Pessoa Física</Link>
-            </li>
+              </li>
+
+              <li className="list-item">  
+                <Link to="/servico-social" className="nav-link">Serviço Social</Link>
+              </li>
           </ul>
         </nav>
       </div>

@@ -4,6 +4,7 @@ import Navigation from './components/routes/Navigation';
 import Login from './components/login/Login';
 import './styles.css';
 import FormPessoaFisica from './components/formpessoafisica/FormPessoaFisica';
+import ServicoSocial from './components/formservicosocial/FormServicoSocial';
 
 
 const App = () => {
@@ -16,6 +17,9 @@ const App = () => {
         <Route path='/' element={ <Login/> } />
         
         <Route path="/pessoa-fisica" element={ <FormPessoaFisica /> } />
+        <Route path="/pessoa-fisica" element={ <ServicoSocial /> } />
+        
+        
         {/* Adicione outras rotas conforme necessário */}
         
       </Routes>
