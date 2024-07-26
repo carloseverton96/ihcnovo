@@ -291,7 +291,10 @@ app.delete("/pessoa-fisica/delete/:id", (req, res) => {
 
 
 
-//REQUISIÇÕES PARA PESSOA FÍSICA
+//REQUISIÇÕES PARA SERVIÇO SOCIAL
+
+
+
 
 
 
