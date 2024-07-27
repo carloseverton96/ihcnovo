@@ -60,115 +60,758 @@ export default function ServicoSocial() {
         <div className="register-container">
           <h1 className="register-title">Serviço social</h1>
 
-          {/* Inputs de CaracteristicaDomicilio */}
+          <br />Caracteristica do Domicilio<br />
+
           <input
             type="text"
-            name="tipoDomicilio"
+            name="tipodomicilio"
             placeholder="Tipo de Domicílio"
             className="register-input"
-            value={values.tipoDomicilio || ''}
+            value={values.tipodomicilio || ''}
             onChange={handleAddValues}
           />
+         
           <input
             type="text"
-            name="numeroComodos"
+            name="numerocomodos"
             placeholder="Número de Cômodos"
             className="register-input"
-            value={values.numeroComodos || ''}
+            value={values.numerocomodos || ''}
             onChange={handleAddValues}
           />
           <input
             type="text"
-            name="materialPredominante"
-            placeholder="Material Predominante"
+            name="tipodeconstrucao"
+            placeholder="Tipo de Construcao"
             className="register-input"
-            value={values.materialPredominante || ''}
+            value={values.tipodeconstrucao || ''}
             onChange={handleAddValues}
           />
           <input
             type="text"
-            name="abastecimentoAgua"
+            name="abastecimentoagua"
             placeholder="Abastecimento de Água"
             className="register-input"
-            value={values.abastecimentoAgua || ''}
+            value={values.abastecimentoagua || ''}
             onChange={handleAddValues}
           />
           <input
             type="text"
-            name="esgotamentoSanitario"
-            placeholder="Esgotamento Sanitário"
+            name="tratamentodeagua"
+            placeholder="Tratamento de Água"
             className="register-input"
-            value={values.esgotamentoSanitario || ''}
+            value={values.tratamentodeagua || ''}
             onChange={handleAddValues}
           />
           <input
             type="text"
-            name="energiaEletrica"
+            name="energiaeletrica"
             placeholder="Energia Elétrica"
             className="register-input"
-            value={values.energiaEletrica || ''}
+            value={values.energiaeletrica || ''}
             onChange={handleAddValues}
           />
           <input
             type="text"
-            name="destinoLixo"
+            name="escoamentosanitario"
+            placeholder="Escoamento Sanitario"
+            className="register-input"
+            value={values.escoamentosanitario || ''}
+            onChange={handleAddValues}
+          />
+
+          <input
+            type="text"
+            name="destinolixo"
             placeholder="Destino do Lixo"
             className="register-input"
-            value={values.destinoLixo || ''}
+            value={values.destinolixo || ''}
             onChange={handleAddValues}
           />
 
-          {/* Inputs de ComposicaoFamiliar */}
-          <input
-            type="text"
-            name="nomeFamiliar"
-            placeholder="Nome do Familiar"
-            className="register-input"
-            value={values.nomeFamiliar || ''}
-            onChange={handleAddValues}
-          />
-          <input
-            type="text"
-            name="parentesco"
-            placeholder="Parentesco"
-            className="register-input"
-            value={values.parentesco || ''}
-            onChange={handleAddValues}
-          />
-          <input
-            type="number"
-            name="idade"
-            placeholder="Idade"
-            className="register-input"
-            value={values.idade || ''}
-            onChange={handleAddValues}
-          />
-          <input
-            type="text"
-            name="escolaridade"
-            placeholder="Escolaridade"
-            className="register-input"
-            value={values.escolaridade || ''}
-            onChange={handleAddValues}
-          />
-          <input
-            type="text"
-            name="ocupacao"
-            placeholder="Ocupação"
-            className="register-input"
-            value={values.ocupacao || ''}
-            onChange={handleAddValues}
-          />
-          <input
-            type="text"
-            name="renda"
-            placeholder="Renda"
-            className="register-input"
-            value={values.renda || ''}
-            onChange={handleAddValues}
-          />
+          <br /> Inputs de ComposicaoFamiliar <br />
+          
+          <table>
+          <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Vínculo Familiar</th>
+      <th>Data de Nascimento</th>
+      <th>Ocupação</th>
+      <th>Vínculo Empregatício</th>
+      <th>Renda</th>
+      <th>Escolaridade</th>
+      <th>Rede Escolar</th>
+    </tr>
+  </thead>
+            <tr>
+              <th>
+                <input
+                  type="text"
+                  name="nomefamilia01"
+                  placeholder="Nome do Familiar"
+                  className="register-input"
+                  value={values.nomefamiliar01 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="vinculofamiliar01"
+                  placeholder="Vinculo Familiar"
+                  className="register-input"
+                  value={values.vinculofamiliar01 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="number"
+                  name="datanascimento01"
+                  placeholder="data nascimento"
+                  className="register-input"
+                  value={values.datanascimento01 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="ocupacao01"
+                  placeholder="Ocupação"
+                  className="register-input"
+                  value={values.ocupacao01 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="vinculoempregaticio01"
+                  placeholder="Vinculo Empregaticio"
+                  className="register-input"
+                  value={values.vinculoempregaticio01 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="renda01"
+                  placeholder="Renda R$"
+                  className="register-input"
+                  value={values.renda01 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="escolaridade01"
+                  placeholder="Escolaridade"
+                  className="register-input"
+                  value={values.escolaridade01 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="redeescolar01"
+                  placeholder="Rede Escolar"
+                  className="register-input"
+                  value={values.redeescolar01 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <input
+                  type="text"
+                  name="nomefamilia02"
+                  placeholder="Nome do Familiar"
+                  className="register-input"
+                  value={values.nomefamiliar02 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="vinculofamiliar02"
+                  placeholder="Vinculo Familiar"
+                  className="register-input"
+                  value={values.vinculofamiliar02 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="number"
+                  name="datanascimento01"
+                  placeholder="data nascimento"
+                  className="register-input"
+                  value={values.datanascimento02 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="ocupacao02"
+                  placeholder="Ocupação"
+                  className="register-input"
+                  value={values.ocupacao02 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="vinculoempregaticio02"
+                  placeholder="Vinculo Empregaticio"
+                  className="register-input"
+                  value={values.vinculoempregaticio02 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="renda02"
+                  placeholder="Renda R$"
+                  className="register-input"
+                  value={values.renda02 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
 
-          {/* Inputs de DespesaFamiliar */}
+              <th>
+                <input
+                  type="text"
+                  name="escolaridade02"
+                  placeholder="Escolaridade"
+                  className="register-input"
+                  value={values.escolaridade02 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="redeescolar02"
+                  placeholder="Rede Escolar"
+                  className="register-input"
+                  value={values.redeescolar02 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+            </tr>
+
+            <tr>
+              <th>
+                <input
+                  type="text"
+                  name="nomefamilia03"
+                  placeholder="Nome do Familiar"
+                  className="register-input"
+                  value={values.nomefamiliar03 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="vinculofamiliar03"
+                  placeholder="Vinculo Familiar"
+                  className="register-input"
+                  value={values.vinculofamiliar03 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="number"
+                  name="datanascimento03"
+                  placeholder="data nascimento"
+                  className="register-input"
+                  value={values.datanascimento03 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="ocupacao03"
+                  placeholder="Ocupação"
+                  className="register-input"
+                  value={values.ocupacao03 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="vinculoempregaticio03"
+                  placeholder="Vinculo Empregaticio"
+                  className="register-input"
+                  value={values.vinculoempregaticio03 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="renda03"
+                  placeholder="Renda R$"
+                  className="register-input"
+                  value={values.renda03 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="escolaridade03"
+                  placeholder="Escolaridade"
+                  className="register-input"
+                  value={values.escolaridade03 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="redeescolar03"
+                  placeholder="Rede Escolar"
+                  className="register-input"
+                  value={values.redeescolar03 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+            </tr>
+
+            <tr>
+              <th>
+                <input
+                  type="text"
+                  name="nomefamilia04"
+                  placeholder="Nome do Familiar"
+                  className="register-input"
+                  value={values.nomefamiliar04 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="vinculofamiliar04"
+                  placeholder="Vinculo Familiar"
+                  className="register-input"
+                  value={values.vinculofamiliar04 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="number"
+                  name="datanascimento04"
+                  placeholder="data nascimento"
+                  className="register-input"
+                  value={values.datanascimento04 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="ocupacao04"
+                  placeholder="Ocupação"
+                  className="register-input"
+                  value={values.ocupacao04 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="vinculoempregaticio04"
+                  placeholder="Vinculo Empregaticio"
+                  className="register-input"
+                  value={values.vinculoempregaticio04 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="renda04"
+                  placeholder="Renda R$"
+                  className="register-input"
+                  value={values.renda04 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="escolaridade04"
+                  placeholder="Escolaridade"
+                  className="register-input"
+                  value={values.escolaridade04 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="redeescolar04"
+                  placeholder="Rede Escolar"
+                  className="register-input"
+                  value={values.redeescolar04 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+            </tr>
+
+            <tr>
+              continuar a partir daqui.
+              <th>
+                <input
+                  type="text"
+                  name="nomefamilia01"
+                  placeholder="Nome do Familiar"
+                  className="register-input"
+                  value={values.nomefamiliar01 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="vinculofamiliar01"
+                  placeholder="Vinculo Familiar"
+                  className="register-input"
+                  value={values.vinculofamiliar01 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="number"
+                  name="datanascimento01"
+                  placeholder="data nascimento"
+                  className="register-input"
+                  value={values.datanascimento01 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="ocupacao01"
+                  placeholder="Ocupação"
+                  className="register-input"
+                  value={values.ocupacao01 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="vinculoempregaticio01"
+                  placeholder="Vinculo Empregaticio"
+                  className="register-input"
+                  value={values.vinculoempregaticio01 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="renda01"
+                  placeholder="Renda R$"
+                  className="register-input"
+                  value={values.renda01 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="escolaridade01"
+                  placeholder="Escolaridade"
+                  className="register-input"
+                  value={values.escolaridade01 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="redeescolar01"
+                  placeholder="Rede Escolar"
+                  className="register-input"
+                  value={values.redeescolar01 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+            </tr>
+
+            <tr>
+              <th>
+                <input
+                  type="text"
+                  name="nomefamilia01"
+                  placeholder="Nome do Familiar"
+                  className="register-input"
+                  value={values.nomefamiliar01 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="vinculofamiliar01"
+                  placeholder="Vinculo Familiar"
+                  className="register-input"
+                  value={values.vinculofamiliar01 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="number"
+                  name="datanascimento01"
+                  placeholder="data nascimento"
+                  className="register-input"
+                  value={values.datanascimento01 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="ocupacao01"
+                  placeholder="Ocupação"
+                  className="register-input"
+                  value={values.ocupacao01 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="vinculoempregaticio01"
+                  placeholder="Vinculo Empregaticio"
+                  className="register-input"
+                  value={values.vinculoempregaticio01 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="renda01"
+                  placeholder="Renda R$"
+                  className="register-input"
+                  value={values.renda01 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="escolaridade01"
+                  placeholder="Escolaridade"
+                  className="register-input"
+                  value={values.escolaridade01 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="redeescolar01"
+                  placeholder="Rede Escolar"
+                  className="register-input"
+                  value={values.redeescolar01 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+            </tr>
+
+            <tr>
+              <th>
+                <input
+                  type="text"
+                  name="nomefamilia01"
+                  placeholder="Nome do Familiar"
+                  className="register-input"
+                  value={values.nomefamiliar01 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="vinculofamiliar01"
+                  placeholder="Vinculo Familiar"
+                  className="register-input"
+                  value={values.vinculofamiliar01 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="number"
+                  name="datanascimento01"
+                  placeholder="data nascimento"
+                  className="register-input"
+                  value={values.datanascimento01 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="ocupacao01"
+                  placeholder="Ocupação"
+                  className="register-input"
+                  value={values.ocupacao01 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="vinculoempregaticio01"
+                  placeholder="Vinculo Empregaticio"
+                  className="register-input"
+                  value={values.vinculoempregaticio01 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="renda01"
+                  placeholder="Renda R$"
+                  className="register-input"
+                  value={values.renda01 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="escolaridade01"
+                  placeholder="Escolaridade"
+                  className="register-input"
+                  value={values.escolaridade01 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="redeescolar01"
+                  placeholder="Rede Escolar"
+                  className="register-input"
+                  value={values.redeescolar01 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+            </tr>
+
+            <tr>
+              <th>
+                <input
+                  type="text"
+                  name="nomefamilia01"
+                  placeholder="Nome do Familiar"
+                  className="register-input"
+                  value={values.nomefamiliar01 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="vinculofamiliar01"
+                  placeholder="Vinculo Familiar"
+                  className="register-input"
+                  value={values.vinculofamiliar01 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="number"
+                  name="datanascimento01"
+                  placeholder="data nascimento"
+                  className="register-input"
+                  value={values.datanascimento01 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="ocupacao01"
+                  placeholder="Ocupação"
+                  className="register-input"
+                  value={values.ocupacao01 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="vinculoempregaticio01"
+                  placeholder="Vinculo Empregaticio"
+                  className="register-input"
+                  value={values.vinculoempregaticio01 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="renda01"
+                  placeholder="Renda R$"
+                  className="register-input"
+                  value={values.renda01 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="escolaridade01"
+                  placeholder="Escolaridade"
+                  className="register-input"
+                  value={values.escolaridade01 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+              <th>
+                <input
+                  type="text"
+                  name="redeescolar01"
+                  placeholder="Rede Escolar"
+                  className="register-input"
+                  value={values.redeescolar01 || ''}
+                  onChange={handleAddValues}
+                />
+              </th>
+            </tr>
+          </table>
+          
+
+          <br /> Inputs de DespesaFamiliar <br />
           <input
             type="text"
             name="tipoDespesa"
