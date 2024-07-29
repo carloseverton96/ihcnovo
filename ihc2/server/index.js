@@ -56,7 +56,99 @@ const createDatabaseAndTables = () => {
       cid10 VARCHAR(255),\
       datainclusao VARCHAR(255),\
       datadesligamento VARCHAR(255),\
-      usodeimagem VARCHAR(255)\
+      usodeimagem VARCHAR(255),\
+tipodomicilio VARCHAR(255),\
+numerocomodos VARCHAR(255),\
+tipodeconstrucao VARCHAR(255),\
+abastecimentoagua VARCHAR(255),\
+tratamentodeagua VARCHAR(255),\
+energiaeletrica VARCHAR(255),\
+escoamentosanitario VARCHAR(255),\
+destinolixo VARCHAR(255),\
+nomefamilia01 TEXT,\
+    vinculofamiliar01 TEXT,\
+    datanascimento01 TEXT,\
+    ocupacao01 TEXT,\
+    vinculoempregaticio01 TEXT,\
+    renda01 TEXT,\
+    escolaridade01 TEXT,\
+    redeescolar01 TEXT,\
+    nomefamilia02 TEXT,\
+    vinculofamiliar02 TEXT,\
+    datanascimento02 TEXT,\
+    ocupacao02 TEXT,\
+    vinculoempregaticio02 TEXT,\
+    renda02 TEXT,\
+    escolaridade02 TEXT,\
+    redeescolar02 TEXT,\
+    nomefamilia03 TEXT,\
+    vinculofamiliar03 TEXT,\
+    datanascimento03 TEXT,\
+    ocupacao03 TEXT,\
+    vinculoempregaticio03 TEXT,\
+    renda03 TEXT,\
+    escolaridade03 TEXT,\
+    redeescolar03 TEXT,\
+    nomefamilia04 TEXT,\
+    vinculofamiliar04 TEXT,\
+    datanascimento04 TEXT,\
+    ocupacao04 TEXT,\
+    vinculoempregaticio04 TEXT,\
+    renda04 TEXT,\
+    escolaridade04 TEXT,\
+    redeescolar04 TEXT,\
+    nomefamilia05 TEXT,\
+    vinculofamiliar05 TEXT,\
+    datanascimento05 TEXT,\
+    ocupacao05 TEXT,\
+    vinculoempregaticio05 TEXT,\
+    renda05 TEXT,\
+    escolaridade05 TEXT,\
+    redeescolar05 TEXT,\
+    nomefamilia06 TEXT,\
+    vinculofamiliar06 TEXT,\
+    datanascimento06 TEXT,\
+    ocupacao06 TEXT,\
+    vinculoempregaticio06 TEXT,\
+    renda06 TEXT,\
+    escolaridade06 TEXT,\
+    redeescolar06 TEXT,\
+    nomefamilia07 TEXT,\
+    vinculofamiliar07 TEXT,\
+    datanascimento07 TEXT,\
+    ocupacao07 TEXT,\
+    vinculoempregaticio07 TEXT,\
+    renda07 TEXT,\
+    escolaridade07 TEXT,\
+    redeescolar07 TEXT,\
+    nomefamilia08 TEXT,\
+    vinculofamiliar08 TEXT,\
+    datanascimento08 TEXT,\
+    ocupacao08 TEXT,\
+    vinculoempregaticio08 TEXT,\
+    renda08 TEXT,\
+    escolaridade08 TEXT,\
+    redeescolar08 TEXT,\
+psf VARCHAR(255),\
+agentesaude VARCHAR(255),\
+observacoes VARCHAR(255),\
+aluguel VARCHAR(255),\
+planoSaude VARCHAR(255),\
+alimentacao VARCHAR(255),\
+agua VARCHAR(255),\
+luz VARCHAR(255),\
+gas VARCHAR(255),\
+medicacao VARCHAR(255),\
+transporte VARCHAR(255),\
+outrasDespesas VARCHAR(255),\
+programahabitacional VARCHAR(255),\
+programadoleite VARCHAR(255),\
+primeiropasso VARCHAR(255),\
+aluguelsocial VARCHAR(255),\
+laudomedico VARCHAR(255),\
+vinculo VARCHAR(255),\
+demandas VARCHAR(255),\
+encaminhamentos VARCHAR(255)\
     )", (err) => {
       if (err) {
         console.error("Erro ao criar a tabela pessoafisica:", err);

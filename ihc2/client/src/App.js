@@ -4,7 +4,7 @@ import Navigation from './components/routes/Navigation';
 import Login from './components/login/Login';
 import './styles.css';
 import FormPessoaFisica from './components/formpessoafisica/FormPessoaFisica';
-import ServicoSocial from './components/formservicosocial/FormServicoSocial';
+import ServicoSocial from './components/formservicosocial/PessoaFisicaPage';
 
 
 const App = () => {

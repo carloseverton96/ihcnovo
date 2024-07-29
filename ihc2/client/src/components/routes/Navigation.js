@@ -10,7 +10,7 @@ import Login from '../login/Login';
 const Navigation = () => {
   return (
         <div className="app-navigation">
-        <div className="container">
+        <div >
           <nav className="navigation">
             <Link to="/" className="navbar-brand"></Link>
             <ul>
