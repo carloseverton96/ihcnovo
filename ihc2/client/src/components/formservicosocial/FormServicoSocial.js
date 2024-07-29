@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Axios from "axios";
 
+
 import CardFormServicoSocial from "../cards/CardFormServicoSocial";
 
 export default function ServicoSocial() {
@@ -477,84 +478,85 @@ export default function ServicoSocial() {
             </tr>
 
             <tr>
-              continuar a partir daqui.
+              
               <th>
                 <input
                   type="text"
-                  name="nomefamilia01"
+                  name="nomefamilia05"
                   placeholder="Nome do Familiar"
                   className="register-input"
-                  value={values.nomefamiliar01 || ''}
+                  value={values.nomefamiliar05 || ''}
                   onChange={handleAddValues}
                 />
               </th>
               <th>
                 <input
                   type="text"
-                  name="vinculofamiliar01"
+                  name="vinculofamiliar05"
                   placeholder="Vinculo Familiar"
                   className="register-input"
-                  value={values.vinculofamiliar01 || ''}
+                  value={values.vinculofamiliar05 || ''}
                   onChange={handleAddValues}
                 />
               </th>
               <th>
                 <input
                   type="number"
-                  name="datanascimento01"
+                  name="datanascimento05"
                   placeholder="data nascimento"
                   className="register-input"
-                  value={values.datanascimento01 || ''}
+                  value={values.datanascimento05 || ''}
                   onChange={handleAddValues}
                 />
               </th>
               <th>
                 <input
                   type="text"
-                  name="ocupacao01"
+                  name="ocupacao05"
                   placeholder="Ocupação"
                   className="register-input"
-                  value={values.ocupacao01 || ''}
+                  value={values.ocupacao05 || ''}
                   onChange={handleAddValues}
                 />
               </th>
               <th>
                 <input
                   type="text"
-                  name="vinculoempregaticio01"
+                  name="vinculoempregaticio05"
                   placeholder="Vinculo Empregaticio"
                   className="register-input"
-                  value={values.vinculoempregaticio01 || ''}
+                  value={values.vinculoempregaticio05 || ''}
                   onChange={handleAddValues}
                 />
               </th>
               <th>
                 <input
                   type="text"
-                  name="renda01"
+                  name="renda05"
                   placeholder="Renda R$"
                   className="register-input"
-                  value={values.renda01 || ''}
+                  value={values.renda05 || ''}
                   onChange={handleAddValues}
                 />
               </th>
+
               <th>
                 <input
                   type="text"
-                  name="escolaridade01"
+                  name="escolaridade05"
                   placeholder="Escolaridade"
                   className="register-input"
-                  value={values.escolaridade01 || ''}
+                  value={values.escolaridade05 || ''}
                   onChange={handleAddValues}
                 />
               </th>
               <th>
                 <input
                   type="text"
-                  name="redeescolar01"
+                  name="redeescolar06"
                   placeholder="Rede Escolar"
                   className="register-input"
-                  value={values.redeescolar01 || ''}
+                  value={values.redeescolar06 || ''}
                   onChange={handleAddValues}
                 />
               </th>
@@ -564,80 +566,80 @@ export default function ServicoSocial() {
               <th>
                 <input
                   type="text"
-                  name="nomefamilia01"
+                  name="nomefamilia06"
                   placeholder="Nome do Familiar"
                   className="register-input"
-                  value={values.nomefamiliar01 || ''}
+                  value={values.nomefamiliar06 || ''}
                   onChange={handleAddValues}
                 />
               </th>
               <th>
                 <input
                   type="text"
-                  name="vinculofamiliar01"
+                  name="vinculofamiliar06"
                   placeholder="Vinculo Familiar"
                   className="register-input"
-                  value={values.vinculofamiliar01 || ''}
+                  value={values.vinculofamiliar06 || ''}
                   onChange={handleAddValues}
                 />
               </th>
               <th>
                 <input
                   type="number"
-                  name="datanascimento01"
+                  name="datanascimento06"
                   placeholder="data nascimento"
                   className="register-input"
-                  value={values.datanascimento01 || ''}
+                  value={values.datanascimento06 || ''}
                   onChange={handleAddValues}
                 />
               </th>
               <th>
                 <input
                   type="text"
-                  name="ocupacao01"
+                  name="ocupacao06"
                   placeholder="Ocupação"
                   className="register-input"
-                  value={values.ocupacao01 || ''}
+                  value={values.ocupacao06 || ''}
                   onChange={handleAddValues}
                 />
               </th>
               <th>
                 <input
                   type="text"
-                  name="vinculoempregaticio01"
+                  name="vinculoempregaticio06"
                   placeholder="Vinculo Empregaticio"
                   className="register-input"
-                  value={values.vinculoempregaticio01 || ''}
+                  value={values.vinculoempregaticio06 || ''}
                   onChange={handleAddValues}
                 />
               </th>
               <th>
                 <input
                   type="text"
-                  name="renda01"
+                  name="renda06"
                   placeholder="Renda R$"
                   className="register-input"
-                  value={values.renda01 || ''}
+                  value={values.renda06 || ''}
                   onChange={handleAddValues}
                 />
               </th>
               <th>
                 <input
                   type="text"
-                  name="escolaridade01"
+                  name="escolaridade06"
                   placeholder="Escolaridade"
                   className="register-input"
-                  value={values.escolaridade01 || ''}
+                  value={values.escolaridade06 || ''}
                   onChange={handleAddValues}
                 />
               </th>
               <th>
                 <input
                   type="text"
-                  name="redeescolar01"
+                  name="redeescolar06"
                   placeholder="Rede Escolar"
                   className="register-input"
-                  value={values.redeescolar01 || ''}
+                  value={values.redeescolar06 || ''}
                   onChange={handleAddValues}
                 />
               </th>
@@ -647,80 +649,80 @@ export default function ServicoSocial() {
               <th>
                 <input
                   type="text"
-                  name="nomefamilia01"
+                  name="nomefamilia07"
                   placeholder="Nome do Familiar"
                   className="register-input"
-                  value={values.nomefamiliar01 || ''}
+                  value={values.nomefamiliar07 || ''}
                   onChange={handleAddValues}
                 />
               </th>
               <th>
                 <input
                   type="text"
-                  name="vinculofamiliar01"
+                  name="vinculofamiliar07"
                   placeholder="Vinculo Familiar"
                   className="register-input"
-                  value={values.vinculofamiliar01 || ''}
+                  value={values.vinculofamiliar07 || ''}
                   onChange={handleAddValues}
                 />
               </th>
               <th>
                 <input
                   type="number"
-                  name="datanascimento01"
+                  name="datanascimento07"
                   placeholder="data nascimento"
                   className="register-input"
-                  value={values.datanascimento01 || ''}
+                  value={values.datanascimento07 || ''}
                   onChange={handleAddValues}
                 />
               </th>
               <th>
                 <input
                   type="text"
-                  name="ocupacao01"
+                  name="ocupacao07"
                   placeholder="Ocupação"
                   className="register-input"
-                  value={values.ocupacao01 || ''}
+                  value={values.ocupacao07 || ''}
                   onChange={handleAddValues}
                 />
               </th>
               <th>
                 <input
                   type="text"
-                  name="vinculoempregaticio01"
+                  name="vinculoempregaticio07"
                   placeholder="Vinculo Empregaticio"
                   className="register-input"
-                  value={values.vinculoempregaticio01 || ''}
+                  value={values.vinculoempregaticio07 || ''}
                   onChange={handleAddValues}
                 />
               </th>
               <th>
                 <input
                   type="text"
-                  name="renda01"
+                  name="renda07"
                   placeholder="Renda R$"
                   className="register-input"
-                  value={values.renda01 || ''}
+                  value={values.renda07 || ''}
                   onChange={handleAddValues}
                 />
               </th>
               <th>
                 <input
                   type="text"
-                  name="escolaridade01"
+                  name="escolaridade07"
                   placeholder="Escolaridade"
                   className="register-input"
-                  value={values.escolaridade01 || ''}
+                  value={values.escolaridade07 || ''}
                   onChange={handleAddValues}
                 />
               </th>
               <th>
                 <input
                   type="text"
-                  name="redeescolar01"
+                  name="redeescolar07"
                   placeholder="Rede Escolar"
                   className="register-input"
-                  value={values.redeescolar01 || ''}
+                  value={values.redeescolar07 || ''}
                   onChange={handleAddValues}
                 />
               </th>
@@ -730,149 +732,96 @@ export default function ServicoSocial() {
               <th>
                 <input
                   type="text"
-                  name="nomefamilia01"
+                  name="nomefamilia08"
                   placeholder="Nome do Familiar"
                   className="register-input"
-                  value={values.nomefamiliar01 || ''}
+                  value={values.nomefamiliar08 || ''}
                   onChange={handleAddValues}
                 />
               </th>
               <th>
                 <input
                   type="text"
-                  name="vinculofamiliar01"
+                  name="vinculofamiliar08"
                   placeholder="Vinculo Familiar"
                   className="register-input"
-                  value={values.vinculofamiliar01 || ''}
+                  value={values.vinculofamiliar08 || ''}
                   onChange={handleAddValues}
                 />
               </th>
               <th>
                 <input
                   type="number"
-                  name="datanascimento01"
+                  name="datanascimento08"
                   placeholder="data nascimento"
                   className="register-input"
-                  value={values.datanascimento01 || ''}
+                  value={values.datanascimento08 || ''}
                   onChange={handleAddValues}
                 />
               </th>
               <th>
                 <input
                   type="text"
-                  name="ocupacao01"
+                  name="ocupacao08"
                   placeholder="Ocupação"
                   className="register-input"
-                  value={values.ocupacao01 || ''}
+                  value={values.ocupacao08 || ''}
                   onChange={handleAddValues}
                 />
               </th>
               <th>
                 <input
                   type="text"
-                  name="vinculoempregaticio01"
+                  name="vinculoempregaticio08"
                   placeholder="Vinculo Empregaticio"
                   className="register-input"
-                  value={values.vinculoempregaticio01 || ''}
+                  value={values.vinculoempregaticio08 || ''}
                   onChange={handleAddValues}
                 />
               </th>
               <th>
                 <input
                   type="text"
-                  name="renda01"
+                  name="renda08"
                   placeholder="Renda R$"
                   className="register-input"
-                  value={values.renda01 || ''}
+                  value={values.renda08 || ''}
                   onChange={handleAddValues}
                 />
               </th>
               <th>
                 <input
                   type="text"
-                  name="escolaridade01"
+                  name="escolaridade08"
                   placeholder="Escolaridade"
                   className="register-input"
-                  value={values.escolaridade01 || ''}
+                  value={values.escolaridade08 || ''}
                   onChange={handleAddValues}
                 />
               </th>
               <th>
                 <input
                   type="text"
-                  name="redeescolar01"
+                  name="redeescolar08"
                   placeholder="Rede Escolar"
                   className="register-input"
-                  value={values.redeescolar01 || ''}
+                  value={values.redeescolar08 || ''}
                   onChange={handleAddValues}
                 />
               </th>
             </tr>
           </table>
           
-
-          <br /> Inputs de DespesaFamiliar <br />
+          
           <input
-            type="text"
-            name="tipoDespesa"
-            placeholder="Tipo de Despesa"
-            className="register-input"
-            value={values.tipoDespesa || ''}
-            onChange={handleAddValues}
-          />
+  type="text"
+  name="psf"
+  placeholder="psf"
+  className="register-input"
+  value={values.psf}
+  onChange={handleAddValues}
+/>
           <input
-            type="number"
-            name="valorDespesa"
-            placeholder="Valor da Despesa"
-            className="register-input"
-            value={values.valorDespesa || ''}
-            onChange={handleAddValues}
-          />
-          <input
-            type="text"
-            name="frequenciaDespesa"
-            placeholder="Frequência da Despesa"
-            className="register-input"
-            value={values.frequenciaDespesa || ''}
-            onChange={handleAddValues}
-          />
-
-          {/* Inputs de ParticipacaoProgramasSAS */}
-          <input
-            type="text"
-            name="programa"
-            placeholder="Programa"
-            className="register-input"
-            value={values.programa || ''}
-            onChange={handleAddValues}
-          />
-          <input
-            type="text"
-            name="beneficios"
-            placeholder="Benefícios"
-            className="register-input"
-            value={values.beneficios || ''}
-            onChange={handleAddValues}
-          />
-          <input
-            type="text"
-            name="dataInicio"
-            placeholder="Data de Início"
-            className="register-input"
-            value={values.dataInicio || ''}
-            onChange={handleAddValues}
-          />
-          <input
-            type="text"
-            name="dataFim"
-            placeholder="Data de Fim"
-            className="register-input"
-            value={values.dataFim || ''}
-            onChange={handleAddValues}
-          />
-
-verificar posição:
-<input
   type="text"
   name="agentesaude"
   placeholder=" Agente de Saúde"
@@ -887,6 +836,174 @@ verificar posição:
   value={values.observacoes}
   onChange={handleAddValues}
 ></textarea>
+
+
+          <br /> Inputs de DespesaFamiliar <br />
+
+          
+        <label htmlFor="aluguel">Aluguel (R$):</label>
+        <input
+          type="number"
+          id="aluguel"
+          name="aluguel"
+          value={values.aluguel}
+          onChange={handleAddValues}
+        />
+      
+    
+        <label htmlFor="planoSaude">Plano de Saúde (R$):</label>
+        <input
+          type="number"
+          id="planoSaude"
+          name="planoSaude"
+          value={values.planoSaude}
+          onChange={handleAddValues}
+        />
+      
+    
+        <label htmlFor="alimentacao">Alimentação (R$):</label>
+        <input
+          type="number"
+          id="alimentacao"
+          name="alimentacao"
+          value={values.alimentacao}
+          onChange={handleAddValues}
+        />
+      
+    
+        <label htmlFor="agua">Água (R$):</label>
+        <input
+          type="number"
+          id="agua"
+          name="agua"
+          value={values.agua}
+          onChange={handleAddValues}
+        />
+      
+    
+        <label htmlFor="luz">Luz (R$):</label>
+        <input
+          type="number"
+          id="luz"
+          name="luz"
+          value={values.luz}
+          onChange={handleAddValues}
+        />
+      
+    
+        <label htmlFor="gas">Gás (R$):</label>
+        <input
+          type="number"
+          id="gas"
+          name="gas"
+          value={values.gas}
+          onChange={handleAddValues}
+        />
+      
+    
+        <label htmlFor="medicacao">Medicação (R$):</label>
+        <input
+          type="number"
+          id="medicacao"
+          name="medicacao"
+          value={values.medicacao}
+          onChange={handleAddValues}
+        />
+      
+    
+        <label htmlFor="transporte">Transporte (R$):</label>
+        <input
+          type="number"
+          id="transporte"
+          name="transporte"
+          value={values.transporte}
+          onChange={handleAddValues}
+        />
+      
+    
+        <label htmlFor="outrasDespesas">Outras Despesas (R$):</label>
+        <input
+          type="number"
+          id="outrasDespesas"
+          name="outrasDespesas"
+          value={values.outrasDespesas}
+          onChange={handleAddValues}
+        />
+      
+
+      <br />Participação em programas do SAS<br />
+
+          <input
+            type="text"
+            name="programahabitacional"
+            placeholder="Programa Habitacional"
+            className="register-input"
+            value={values.programahabitacional || ''}
+            onChange={handleAddValues}
+          />
+          <input
+            type="text"
+            name="programadoleite"
+            placeholder="Programa do Leite"
+            className="register-input"
+            value={values.programadoleite || ''}
+            onChange={handleAddValues}
+          />
+          <input
+            type="text"
+            name="aluguelsocial"
+            placeholder="Aluguel Social"
+            className="register-input"
+            value={values.aluguelsocial || ''}
+            onChange={handleAddValues}
+          />
+          <input
+            type="text"
+            name="primeiropasso"
+            placeholder="Primeiro Passo"
+            className="register-input"
+            value={values.primeiropasso || ''}
+            onChange={handleAddValues}
+          />
+
+<input
+            type="text"
+            name="laudomedico"
+            placeholder="Laudo Médico"
+            className="register-input"
+            value={values.laudomedico || ''}
+            onChange={handleAddValues}
+          />
+          
+          <input
+            type="text"
+            name="vinculo"
+            placeholder="vinculo (IHC/SESAU)"
+            className="register-input"
+            value={values.vinculo || ''}
+            onChange={handleAddValues}
+          />
+
+<input
+            type="text"
+            name="demandas"
+            placeholder="Demandas"
+            className="register-input"
+            value={values.demandas || ''}
+            onChange={handleAddValues}
+          />
+
+<input
+            type="text"
+            name="encaminhamentos"
+            placeholder="Encaminhamentos"
+            className="register-input"
+            value={values.encaminhamentos || ''}
+            onChange={handleAddValues}
+          />
+
+
+
 
           <button onClick={handleRegisterServicoSocial} className="register-button">
             Cadastrar
