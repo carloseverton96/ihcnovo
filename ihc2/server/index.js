@@ -192,7 +192,99 @@ app.post("/register/pessoa-fisica", async (req, res) => {
       cid10, 
       datainclusao, 
       datadesligamento, 
-      usodeimagem
+      usodeimagem,
+      tipodomicilio,
+      numerocomodos,
+      tipodeconstrucao,
+      abastecimentoagua,
+      tratamentodeagua,
+      energiaeletrica,
+      escoamentosanitario,
+      destinolixo,
+      nomefamilia01,
+      vinculofamiliar01,
+      datanascimento01,
+      ocupacao01,
+      vinculoempregaticio01,
+      renda01,
+      escolaridade01,
+      redeescolar01,
+      nomefamilia02,
+      vinculofamiliar02,
+      datanascimento02,
+      ocupacao02,
+      vinculoempregaticio02,
+      renda02,
+      escolaridade02,
+      redeescolar02,
+      nomefamilia03,
+      vinculofamiliar03,
+      datanascimento03,
+      ocupacao03,
+      vinculoempregaticio03,
+      renda03,
+      escolaridade03,
+      redeescolar03,
+      nomefamilia04,
+      vinculofamiliar04,
+      datanascimento04,
+      ocupacao04,
+      vinculoempregaticio04,
+      renda04,
+      escolaridade04,
+      redeescolar04,
+      nomefamilia05,
+      vinculofamiliar05,
+      datanascimento05,
+      ocupacao05,
+      vinculoempregaticio05,
+      renda05,
+      escolaridade05,
+      redeescolar05,
+      nomefamilia06,
+      vinculofamiliar06,
+      datanascimento06,
+      ocupacao06,
+      vinculoempregaticio06,
+      renda06,
+      escolaridade06,
+      redeescolar06,
+      nomefamilia07,
+      vinculofamiliar07,
+      datanascimento07,
+      ocupacao07,
+      vinculoempregaticio07,
+      renda07,
+      escolaridade07,
+      redeescolar07,
+      nomefamilia08,
+      vinculofamiliar08,
+      datanascimento08,
+      ocupacao08,
+      vinculoempregaticio08,
+      renda08,
+      escolaridade08,
+      redeescolar08,
+      psf,
+      agentesaude,
+      observacoes,
+      aluguel,
+      planoSaude,
+      alimentacao,
+      agua,
+      luz,
+      gas,
+      medicacao,
+      transporte,
+      outrasDespesas,
+      programahabitacional,
+      programadoleite,
+      primeiropasso,
+      aluguelsocial,
+      laudomedico,
+      vinculo,
+      demandas,
+      encaminhamentos
     } = req.body;
 
     
@@ -201,7 +293,7 @@ app.post("/register/pessoa-fisica", async (req, res) => {
       INSERT INTO pessoafisica (
         nome, apelido, sexo, datanascimento, rg, ssp, cpf, cartaosus, endereco,
         numero, bairro, complemento, municipio, pontodereferencia, contato1, contato2, pai, mae, responsavel, bolsafamilia, valorbolsafamilia, beneficiodeprestacaocontinuada, nis, cid10, datainclusao, datadesligamento, usodeimagem 
-      ) VALUES (?, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?, ?)
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `;
 
     db.query(sql, [
@@ -248,10 +340,101 @@ app.post("/search", (req, res) => {
   const { datainclusao } = req.body;
   const { datadesligamento } = req.body;
   const { usodeimagem } = req.body;
-  
+  const { tipodomicilio } = req.body;
+  const { numerocomodos } = req.body;
+  const { tipodeconstrucao } = req.body;
+  const { abastecimentoagua } = req.body;
+  const { tratamentodeagua } = req.body;
+  const { energiaeletrica } = req.body;
+  const { escoamentosanitario } = req.body;
+  const { destinolixo } = req.body;
+  const { nomefamilia01 } = req.body;
+  const { vinculofamiliar01 } = req.body;
+  const { datanascimento01 } = req.body;
+  const { ocupacao01 } = req.body;
+  const { vinculoempregaticio01 } = req.body;
+  const { renda01 } = req.body;
+  const { escolaridade01 } = req.body;
+  const { redeescolar01 } = req.body;
+  const { nomefamilia02 } = req.body;
+  const { vinculofamiliar02 } = req.body;
+  const { datanascimento02 } = req.body;
+  const { ocupacao02 } = req.body;
+  const { vinculoempregaticio02 } = req.body;
+  const { renda02 } = req.body;
+  const { escolaridade02 } = req.body;
+  const { redeescolar02 } = req.body;
+  const { nomefamilia03 } = req.body;
+  const { vinculofamiliar03 } = req.body;
+  const { datanascimento03 } = req.body;
+  const { ocupacao03 } = req.body;
+  const { vinculoempregaticio03 } = req.body;
+  const { renda03 } = req.body;
+  const { escolaridade03 } = req.body;
+  const { redeescolar03 } = req.body;
+  const { nomefamilia04 } = req.body;
+  const { vinculofamiliar04 } = req.body;
+  const { datanascimento04 } = req.body;
+  const { ocupacao04 } = req.body;
+  const { vinculoempregaticio04 } = req.body;
+  const { renda04 } = req.body;
+  const { escolaridade04 } = req.body;
+  const { redeescolar04 } = req.body;
+  const { nomefamilia05 } = req.body;
+  const { vinculofamiliar05 } = req.body;
+  const { datanascimento05 } = req.body;
+  const { ocupacao05 } = req.body;
+  const { vinculoempregaticio05 } = req.body;
+  const { renda05 } = req.body;
+  const { escolaridade05 } = req.body;
+  const { redeescolar05 } = req.body;
+  const { nomefamilia06 } = req.body;
+  const { vinculofamiliar06 } = req.body;
+  const { datanascimento06 } = req.body;
+  const { ocupacao06 } = req.body;
+  const { vinculoempregaticio06 } = req.body;
+  const { renda06 } = req.body;
+  const { escolaridade06 } = req.body;
+  const { redeescolar06 } = req.body;
+  const { nomefamilia07 } = req.body;
+  const { vinculofamiliar07 } = req.body;
+  const { datanascimento07 } = req.body;
+  const { ocupacao07 } = req.body;
+  const { vinculoempregaticio07 } = req.body;
+  const { renda07 } = req.body;
+  const { escolaridade07 } = req.body;
+  const { redeescolar07 } = req.body;
+  const { nomefamilia08 } = req.body;
+  const { vinculofamiliar08 } = req.body;
+  const { datanascimento08 } = req.body;
+  const { ocupacao08 } = req.body;
+  const { vinculoempregaticio08 } = req.body;
+  const { renda08 } = req.body;
+  const { escolaridade08 } = req.body;
+  const { redeescolar08 } = req.body;
+  const { psf } = req.body;
+  const { agentesaude } = req.body;
+  const { observacoes } = req.body;
+  const { aluguel } = req.body;
+  const { planoSaude } = req.body;
+  const { alimentacao } = req.body;
+  const { agua } = req.body;
+  const { luz } = req.body;
+  const { gas } = req.body;
+  const { medicacao } = req.body;
+  const { transporte } = req.body;
+  const { outrasDespesas } = req.body;
+  const { programahabitacional } = req.body;
+  const { programadoleite } = req.body;
+  const { primeiropasso } = req.body;
+  const { aluguelsocial } = req.body;
+  const { laudomedico } = req.body;
+  const { vinculo } = req.body;
+  const { demandas } = req.body;
+  const { encaminhamentos } = req.body;  
   let mysql =
-    "SELECT * from pessoafisica WHERE nome = ?, apelido = ?, sexo = ?, datanascimento = ?, rg = ?, ssp = ?, cpf = ?, cartaosus = ?, endereco = ?, numero = ?, bairro = ?, complemento = ?, municipio = ?, pontodereferencia = ?, contato1 = ?, contato2 = ?, pai = ?, mae = ?, responsavel = ?, bolsafamilia = ?, beneficiodeprestacaocontinuada = ?, nis = ?, cid10 = ?, datainclusao = ?, datadesligamento = ?, usodeimagem = ?";
-  db.query(mysql, [ nome, apelido, sexo, datanascimento, rg, ssp, cpf, cartaosus, endereco, numero, bairro, complemento, municipio, pontodereferencia, contato1, contato2, pai, mae, responsavel, bolsafamilia, beneficiodeprestacaocontinuada, nis, cid10, datainclusao, datadesligamento, usodeimagem ], (err, result) => {
+    "SELECT * from pessoafisica WHERE nome = ?, apelido = ?, sexo = ?, datanascimento = ?, rg = ?, ssp = ?, cpf = ?, cartaosus = ?, endereco = ?, numero = ?, bairro = ?, complemento = ?, municipio = ?, pontodereferencia = ?, contato1 = ?, contato2 = ?, pai = ?, mae = ?, responsavel = ?, bolsafamilia = ?, beneficiodeprestacaocontinuada = ?, nis = ?, cid10 = ?, datainclusao = ?, datadesligamento = ?, usodeimagem = ?,  tipodomicilio = ?, numerocomodos = ?, tipodeconstrucao = ?, abastecimentoagua = ?, tratamentodeagua = ?, energiaeletrica = ?, escoamentosanitario = ?, destinolixo = ?, nomefamilia01 = ?, vinculofamiliar01 = ?, datanascimento01 = ?, ocupacao01 = ?, vinculoempregaticio01 = ?, renda01 = ?, escolaridade01 = ?, redeescolar01 = ?, nomefamilia02 = ?, vinculofamiliar02 = ?, datanascimento02 = ?, ocupacao02 = ?, vinculoempregaticio02 = ?, renda02 = ?, escolaridade02 = ?, redeescolar02 = ?, nomefamilia03 = ?, vinculofamiliar03 = ?, datanascimento03 = ?, ocupacao03 = ?, vinculoempregaticio03 = ?, renda03 = ?, escolaridade03 = ?, redeescolar03 = ?, nomefamilia04 = ?, vinculofamiliar04 = ?, datanascimento04 = ?, ocupacao04 = ?, vinculoempregaticio04 = ?, renda04 = ?, escolaridade04 = ?, redeescolar04 = ?, nomefamilia05 = ?, vinculofamiliar05 = ?, datanascimento05 = ?, ocupacao05 = ?, vinculoempregaticio05 = ?, renda05 = ?, escolaridade05 = ?, redeescolar05 = ?, nomefamilia06 = ?, vinculofamiliar06 = ?, datanascimento06 = ?, ocupacao06 = ?, vinculoempregaticio06 = ?, renda06 = ?, escolaridade06 = ?, redeescolar06 = ?, nomefamilia07 = ?,vinculofamiliar07 = ?, datanascimento07 = ?, ocupacao07 = ?, vinculoempregaticio07 = ?, renda07 = ?, escolaridade07 = ?, redeescolar07 = ?, nomefamilia08 = ?, vinculofamiliar08 = ?, datanascimento08 = ?, ocupacao08 = ?, vinculoempregaticio08 = ?, renda08 = ?, escolaridade08 = ?, redeescolar08 = ?, psf = ?, agentesaude = ?, observacoes = ?, aluguel = ?, planoSaude = ?, alimentacao = ?, agua = ?, luz = ?, gas = ?, medicacao = ?, transporte = ?, outrasDespesas = ?, programahabitacional = ?, programadoleite = ?, primeiropasso = ?, aluguelsocial = ?, laudomedico = ?, vinculo = ?, demandas = ?, encaminhamentos = ?";
+  db.query(mysql, [ nome, apelido, sexo, datanascimento, rg, ssp, cpf, cartaosus, endereco, numero, bairro, complemento, municipio, pontodereferencia, contato1, contato2, pai, mae, responsavel, bolsafamilia, beneficiodeprestacaocontinuada, nis, cid10, datainclusao, datadesligamento, usodeimagem, tipodomicilio, numerocomodos, tipodeconstrucao, abastecimentoagua, tratamentodeagua, energiaeletrica, escoamentosanitario, destinolixo, nomefamilia01, vinculofamiliar01, datanascimento01, ocupacao01, vinculoempregaticio01, renda01, escolaridade01, redeescolar01, nomefamilia02, vinculofamiliar02, datanascimento02, ocupacao02, vinculoempregaticio02, renda02, escolaridade02, redeescolar02, nomefamilia03, vinculofamiliar03, datanascimento03, ocupacao03, vinculoempregaticio03, renda03, escolaridade03, redeescolar03, nomefamilia04, vinculofamiliar04, datanascimento04, ocupacao04, vinculoempregaticio04, renda04, escolaridade04, redeescolar04, nomefamilia05, vinculofamiliar05, datanascimento05, ocupacao05, vinculoempregaticio05, renda05, escolaridade05, redeescolar05, nomefamilia06, vinculofamiliar06, datanascimento06, ocupacao06, vinculoempregaticio06, renda06, escolaridade06, redeescolar06, nomefamilia07,vinculofamiliar07, datanascimento07, ocupacao07, vinculoempregaticio07, renda07, escolaridade07, redeescolar07, nomefamilia08, vinculofamiliar08, datanascimento08, ocupacao08, vinculoempregaticio08, renda08, escolaridade08, redeescolar08, psf, agentesaude, observacoes, aluguel, planoSaude, alimentacao, agua, luz, gas, medicacao, transporte, outrasDespesas, programahabitacional, programadoleite, primeiropasso, aluguelsocial, laudomedico, vinculo, demandas, encaminhamentos ], (err, result) => {
     if (err) res.send(err);
     res.send(result);
   });
@@ -299,6 +482,98 @@ app.put("/pessoa-fisica/edit", (req, res) => {
       datainclusao,
       datadesligamento,
       usodeimagem,
+      tipodomicilio,
+      numerocomodos,
+      tipodeconstrucao,
+      abastecimentoagua,
+      tratamentodeagua,
+      energiaeletrica,
+      escoamentosanitario,
+      destinolixo,
+      nomefamilia01,
+      vinculofamiliar01,
+      datanascimento01,
+      ocupacao01,
+      vinculoempregaticio01,
+      renda01,
+      escolaridade01,
+      redeescolar01,
+      nomefamilia02,
+      vinculofamiliar02,
+      datanascimento02,
+      ocupacao02,
+      vinculoempregaticio02,
+      renda02,
+      escolaridade02,
+      redeescolar02,
+      nomefamilia03,
+      vinculofamiliar03,
+      datanascimento03,
+      ocupacao03,
+      vinculoempregaticio03,
+      renda03,
+      escolaridade03,
+      redeescolar03,
+      nomefamilia04,
+      vinculofamiliar04,
+      datanascimento04,
+      ocupacao04,
+      vinculoempregaticio04,
+      renda04,
+      escolaridade04,
+      redeescolar04,
+      nomefamilia05,
+      vinculofamiliar05,
+      datanascimento05,
+      ocupacao05,
+      vinculoempregaticio05,
+      renda05,
+      escolaridade05,
+      redeescolar05,
+      nomefamilia06,
+      vinculofamiliar06,
+      datanascimento06,
+      ocupacao06,
+      vinculoempregaticio06,
+      renda06,
+      escolaridade06,
+      redeescolar06,
+      nomefamilia07,
+      vinculofamiliar07,
+      datanascimento07,
+      ocupacao07,
+      vinculoempregaticio07,
+      renda07,
+      escolaridade07,
+      redeescolar07,
+      nomefamilia08,
+      vinculofamiliar08,
+      datanascimento08,
+      ocupacao08,
+      vinculoempregaticio08,
+      renda08,
+      escolaridade08,
+      redeescolar08,
+      psf,
+      agentesaude,
+      observacoes,
+      aluguel,
+      planoSaude,
+      alimentacao,
+      agua,
+      luz,
+      gas,
+      medicacao,
+      transporte,
+      outrasDespesas,
+      programahabitacional,
+      programadoleite,
+      primeiropasso,
+      aluguelsocial,
+      laudomedico,
+      vinculo,
+      demandas,
+      encaminhamentos,
     } = req.body;
 
     if (!id) {
@@ -307,7 +582,7 @@ app.put("/pessoa-fisica/edit", (req, res) => {
 
     const sql = `
       UPDATE pessoafisica
-      SET nome = ?, apelido = ?, sexo = ?, datanascimento = ?, rg = ?, ssp = ?, cpf = ?, cartaosus = ?, endereco = ?, numero = ?, bairro = ?, complemento = ?, municipio = ?, pontodereferencia = ?, contato1 = ?, contato2 = ?, pai = ?, mae = ?, responsavel = ?, bolsafamilia = ?, valorbolsafamilia = ?, beneficiodeprestacaocontinuada = ?, nis = ?, cid10 = ?, datainclusao = ?, datadesligamento = ?, usodeimagem = ?
+      SET nome = ?, apelido = ?, sexo = ?, datanascimento = ?, rg = ?, ssp = ?, cpf = ?, cartaosus = ?, endereco = ?, numero = ?, bairro = ?, complemento = ?, municipio = ?, pontodereferencia = ?, contato1 = ?, contato2 = ?, pai = ?, mae = ?, responsavel = ?, bolsafamilia = ?, valorbolsafamilia = ?, beneficiodeprestacaocontinuada = ?, nis = ?, cid10 = ?, datainclusao = ?, datadesligamento = ?, usodeimagem = ?,  tipodomicilio = ?, numerocomodos = ?, tipodeconstrucao = ?, abastecimentoagua = ?, tratamentodeagua = ?, energiaeletrica = ?, escoamentosanitario = ?, destinolixo = ?, nomefamilia01 = ?, vinculofamiliar01 = ?, datanascimento01 = ?, ocupacao01 = ?, vinculoempregaticio01 = ?, renda01 = ?, escolaridade01 = ?, redeescolar01 = ?, nomefamilia02 = ?, vinculofamiliar02 = ?, datanascimento02 = ?, ocupacao02 = ?, vinculoempregaticio02 = ?, renda02 = ?, escolaridade02 = ?, redeescolar02 = ?, nomefamilia03 = ?, vinculofamiliar03 = ?, datanascimento03 = ?, ocupacao03 = ?, vinculoempregaticio03 = ?, renda03 = ?, escolaridade03 = ?, redeescolar03 = ?, nomefamilia04 = ?, vinculofamiliar04 = ?, datanascimento04 = ?, ocupacao04 = ?, vinculoempregaticio04 = ?, renda04 = ?, escolaridade04 = ?, redeescolar04 = ?, nomefamilia05 = ?, vinculofamiliar05 = ?, datanascimento05 = ?, ocupacao05 = ?, vinculoempregaticio05 = ?, renda05 = ?, escolaridade05 = ?, redeescolar05 = ?, nomefamilia06 = ?, vinculofamiliar06 = ?, datanascimento06 = ?, ocupacao06 = ?, vinculoempregaticio06 = ?, renda06 = ?, escolaridade06 = ?, redeescolar06 = ?, nomefamilia07 = ?,vinculofamiliar07 = ?, datanascimento07 = ?, ocupacao07 = ?, vinculoempregaticio07 = ?, renda07 = ?, escolaridade07 = ?, redeescolar07 = ?, nomefamilia08 = ?, vinculofamiliar08 = ?, datanascimento08 = ?, ocupacao08 = ?, vinculoempregaticio08 = ?, renda08 = ?, escolaridade08 = ?, redeescolar08 = ?, psf = ?, agentesaude = ?, observacoes = ?, aluguel = ?, planoSaude = ?, alimentacao = ?, agua = ?, luz = ?, gas = ?, medicacao = ?, transporte = ?, outrasDespesas = ?, programahabitacional = ?, programadoleite = ?, primeiropasso = ?, aluguelsocial = ?, laudomedico = ?, vinculo = ?, demandas = ?, encaminhamentos = ?
       WHERE id = ?
     `;
 
@@ -339,6 +614,98 @@ app.put("/pessoa-fisica/edit", (req, res) => {
       datainclusao,
       datadesligamento,
       usodeimagem,
+      tipodomicilio,
+      numerocomodos,
+      tipodeconstrucao,
+      abastecimentoagua,
+      tratamentodeagua,
+      energiaeletrica,
+      escoamentosanitario,
+      destinolixo,
+      nomefamilia01,
+      vinculofamiliar01,
+      datanascimento01,
+      ocupacao01,
+      vinculoempregaticio01,
+      renda01,
+      escolaridade01,
+      redeescolar01,
+      nomefamilia02,
+      vinculofamiliar02,
+      datanascimento02,
+      ocupacao02,
+      vinculoempregaticio02,
+      renda02,
+      escolaridade02,
+      redeescolar02,
+      nomefamilia03,
+      vinculofamiliar03,
+      datanascimento03,
+      ocupacao03,
+      vinculoempregaticio03,
+      renda03,
+      escolaridade03,
+      redeescolar03,
+      nomefamilia04,
+      vinculofamiliar04,
+      datanascimento04,
+      ocupacao04,
+      vinculoempregaticio04,
+      renda04,
+      escolaridade04,
+      redeescolar04,
+      nomefamilia05,
+      vinculofamiliar05,
+      datanascimento05,
+      ocupacao05,
+      vinculoempregaticio05,
+      renda05,
+      escolaridade05,
+      redeescolar05,
+      nomefamilia06,
+      vinculofamiliar06,
+      datanascimento06,
+      ocupacao06,
+      vinculoempregaticio06,
+      renda06,
+      escolaridade06,
+      redeescolar06,
+      nomefamilia07,
+      vinculofamiliar07,
+      datanascimento07,
+      ocupacao07,
+      vinculoempregaticio07,
+      renda07,
+      escolaridade07,
+      redeescolar07,
+      nomefamilia08,
+      vinculofamiliar08,
+      datanascimento08,
+      ocupacao08,
+      vinculoempregaticio08,
+      renda08,
+      escolaridade08,
+      redeescolar08,
+      psf,
+      agentesaude,
+      observacoes,
+      aluguel,
+      planoSaude,
+      alimentacao,
+      agua,
+      luz,
+      gas,
+      medicacao,
+      transporte,
+      outrasDespesas,
+      programahabitacional,
+      programadoleite,
+      primeiropasso,
+      aluguelsocial,
+      laudomedico,
+      vinculo,
+      demandas,
+      encaminhamentos,
       id,
     ];
 
