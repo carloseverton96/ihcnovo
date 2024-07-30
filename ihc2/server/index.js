@@ -181,17 +181,17 @@ app.post("/register/pessoa-fisica", async (req, res) => {
       municipio,
       pontodereferencia,
       contato1,
-      contato2, 
-      pai, 
-      mae, 
-      responsavel, 
+      contato2,
+      pai,
+      mae,
+      responsavel,
       bolsafamilia,
       valorbolsafamilia,
-      beneficiodeprestacaocontinuada, 
-      nis, 
-      cid10, 
-      datainclusao, 
-      datadesligamento, 
+      beneficiodeprestacaocontinuada,
+      nis,
+      cid10,
+      datainclusao,
+      datadesligamento,
       usodeimagem,
       tipodomicilio,
       numerocomodos,
@@ -287,30 +287,30 @@ app.post("/register/pessoa-fisica", async (req, res) => {
       encaminhamentos
     } = req.body;
 
-    
-
     const sql = `
       INSERT INTO pessoafisica (
         nome, apelido, sexo, datanascimento, rg, ssp, cpf, cartaosus, endereco,
-        numero, bairro, complemento, municipio, pontodereferencia, contato1, contato2, pai, mae, responsavel, bolsafamilia, valorbolsafamilia, beneficiodeprestacaocontinuada, nis, cid10, datainclusao, datadesligamento, usodeimagem 
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        numero, bairro, complemento, municipio, pontodereferencia, contato1, contato2, pai, mae, responsavel, bolsafamilia, valorbolsafamilia, beneficiodeprestacaocontinuada, nis, cid10, datainclusao, datadesligamento, usodeimagem, tipodomicilio, numerocomodos, tipodeconstrucao, abastecimentoagua, tratamentodeagua, energiaeletrica, escoamentosanitario, destinolixo, nomefamilia01, vinculofamiliar01, datanascimento01, ocupacao01, vinculoempregaticio01, renda01, escolaridade01, redeescolar01, nomefamilia02, vinculofamiliar02, datanascimento02, ocupacao02, vinculoempregaticio02, renda02, escolaridade02, redeescolar02, nomefamilia03, vinculofamiliar03, datanascimento03, ocupacao03, vinculoempregaticio03, renda03, escolaridade03, redeescolar03, nomefamilia04, vinculofamiliar04, datanascimento04, ocupacao04, vinculoempregaticio04, renda04, escolaridade04, redeescolar04, nomefamilia05, vinculofamiliar05, datanascimento05, ocupacao05, vinculoempregaticio05, renda05, escolaridade05, redeescolar05, nomefamilia06, vinculofamiliar06, datanascimento06, ocupacao06, vinculoempregaticio06, renda06, escolaridade06, redeescolar06, nomefamilia07, vinculofamiliar07, datanascimento07, ocupacao07, vinculoempregaticio07, renda07, escolaridade07, redeescolar07, nomefamilia08, vinculofamiliar08, datanascimento08, ocupacao08, vinculoempregaticio08, renda08, escolaridade08, redeescolar08, psf, agentesaude, observacoes, aluguel, planoSaude, alimentacao, agua, luz, gas, medicacao, transporte, outrasDespesas, programahabitacional, programadoleite, primeiropasso, aluguelsocial, laudomedico, vinculo, demandas, encaminhamentos
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,  ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,  ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,  ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `;
 
     db.query(sql, [
       nome, apelido, sexo, datanascimento, rg, ssp, cpf, cartaosus, endereco,
-      numero, bairro, complemento, municipio, pontodereferencia, contato1, contato2, pai, mae, responsavel, bolsafamilia, valorbolsafamilia, beneficiodeprestacaocontinuada, nis, cid10, datainclusao, datadesligamento, usodeimagem
+      numero, bairro, complemento, municipio, pontodereferencia, contato1, contato2, pai, mae, responsavel, bolsafamilia, valorbolsafamilia, beneficiodeprestacaocontinuada, nis, cid10, datainclusao, datadesligamento, usodeimagem, tipodomicilio, numerocomodos, tipodeconstrucao, abastecimentoagua, tratamentodeagua, energiaeletrica, escoamentosanitario, destinolixo, nomefamilia01, vinculofamiliar01, datanascimento01, ocupacao01, vinculoempregaticio01, renda01, escolaridade01, redeescolar01, nomefamilia02, vinculofamiliar02, datanascimento02, ocupacao02, vinculoempregaticio02, renda02, escolaridade02, redeescolar02, nomefamilia03, vinculofamiliar03, datanascimento03, ocupacao03, vinculoempregaticio03, renda03, escolaridade03, redeescolar03, nomefamilia04, vinculofamiliar04, datanascimento04, ocupacao04, vinculoempregaticio04, renda04, escolaridade04, redeescolar04, nomefamilia05, vinculofamiliar05, datanascimento05, ocupacao05, vinculoempregaticio05, renda05, escolaridade05, redeescolar05, nomefamilia06, vinculofamiliar06, datanascimento06, ocupacao06, vinculoempregaticio06, renda06, escolaridade06, redeescolar06, nomefamilia07, vinculofamiliar07, datanascimento07, ocupacao07, vinculoempregaticio07, renda07, escolaridade07, redeescolar07, nomefamilia08, vinculofamiliar08, datanascimento08, ocupacao08, vinculoempregaticio08, renda08, escolaridade08, redeescolar08, psf, agentesaude, observacoes, aluguel, planoSaude, alimentacao, agua, luz, gas, medicacao, transporte, outrasDespesas, programahabitacional, programadoleite, primeiropasso, aluguelsocial, laudomedico, vinculo, demandas, encaminhamentos
     ], (err, result) => {
       if (err) {
-        console.error(err);
+        console.error("Database Error:", err);
         return res.status(500).send({ message: "Erro ao cadastrar pessoa física" });
       }
       res.send({ message: "Pessoa física cadastrada com sucesso!", id: result.insertId });
     });
   } catch (err) {
-    console.error(err);
+    console.error("Server Error:", err);
     res.status(500).send({ message: "Erro ao cadastrar pessoa física" });
   }
 });
+
+
 
 
 app.post("/search", (req, res) => {
